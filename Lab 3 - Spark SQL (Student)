@@ -1,0 +1,271 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "collapsed": true
+   },
+   "source": [
+    "# SparkSQL Basics\n",
+    "\n",
+    "Here we will explore some of the basic functions of SparkSQL, including using the `pyspark.sql.functions` to explore the data that was in our previous dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[Row(#=1, Name=u'Bulbasaur', Type 1=u'Grass', Type 2=u'Poison', Total=318, HP=45, Attack=49, Defense=49, Sp. Atk=65, Sp. Def=65, Speed=45, Generation=1, Legendary=False),\n",
+       " Row(#=2, Name=u'Ivysaur', Type 1=u'Grass', Type 2=u'Poison', Total=405, HP=60, Attack=62, Defense=63, Sp. Atk=80, Sp. Def=80, Speed=60, Generation=1, Legendary=False),\n",
+       " Row(#=3, Name=u'Venusaur', Type 1=u'Grass', Type 2=u'Poison', Total=525, HP=80, Attack=82, Defense=83, Sp. Atk=100, Sp. Def=100, Speed=80, Generation=1, Legendary=False),\n",
+       " Row(#=3, Name=u'VenusaurMega Venusaur', Type 1=u'Grass', Type 2=u'Poison', Total=625, HP=80, Attack=100, Defense=123, Sp. Atk=122, Sp. Def=120, Speed=80, Generation=1, Legendary=False),\n",
+       " Row(#=4, Name=u'Charmander', Type 1=u'Fire', Type 2=None, Total=309, HP=39, Attack=52, Defense=43, Sp. Atk=60, Sp. Def=50, Speed=65, Generation=1, Legendary=False)]"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# import our data\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Using `pyspark.sql.functions` with `select`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "+-----------+\n",
+      "|avg(Attack)|\n",
+      "+-----------+\n",
+      "|   79.00125|\n",
+      "+-----------+\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "from pyspark.sql.functions import mean\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "+--------------------+\n",
+      "|stddev_samp(Defense)|\n",
+      "+--------------------+\n",
+      "|  31.183500559332924|\n",
+      "+--------------------+\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# What other methods are available? Use autocomplete to explore\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Register as a temporary table"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### We can now use `spark.sql` to explore our data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {
+    "collapsed": false
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "+--------------------+-------+\n",
+      "|                Name|Defense|\n",
+      "+--------------------+-------+\n",
+      "|           Bulbasaur|     49|\n",
+      "|             Ivysaur|     63|\n",
+      "|            Venusaur|     83|\n",
+      "|VenusaurMega Venu...|    123|\n",
+      "|          Charmander|     43|\n",
+      "|          Charmeleon|     58|\n",
+      "|           Charizard|     78|\n",
+      "|CharizardMega Cha...|    111|\n",
+      "|CharizardMega Cha...|     78|\n",
+      "|            Squirtle|     65|\n",
+      "|           Wartortle|     80|\n",
+      "|           Blastoise|    100|\n",
+      "|BlastoiseMega Bla...|    120|\n",
+      "|            Caterpie|     35|\n",
+      "|             Metapod|     55|\n",
+      "|          Butterfree|     50|\n",
+      "|              Weedle|     30|\n",
+      "|              Kakuna|     50|\n",
+      "|            Beedrill|     40|\n",
+      "|BeedrillMega Beed...|     40|\n",
+      "+--------------------+-------+\n",
+      "only showing top 20 rows\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Exercise: Use SparkSQL to answer some of the questions we came up with from our previous exercise"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2 with Spark 2.1",
+   "language": "python",
+   "name": "python2-spark21"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 0
+}
